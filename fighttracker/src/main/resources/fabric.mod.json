@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "fighttracker",
+  "version": "${version}",
+  "name": "Fight Tracker",
+  "description": "Tracks your PvP kills and deaths against every player you fight, with a lobby menu, graphs and name history.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.fighttracker.FightTrackerMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
