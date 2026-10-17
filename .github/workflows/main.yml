@@ -14,11 +14,14 @@ jobs:
           java-version: 21
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: current
-      - run: gradle build --no-daemon
+          gradle-version: 9.2.1
+      - name: Build
+        run: |
+          cd "$(dirname "$(find . -name settings.gradle | head -n 1)")"
+          gradle build --no-daemon
       - uses: actions/upload-artifact@v4
         with:
           name: fighttracker-jar
           path: |
-            build/libs/*.jar
-            !build/libs/*-sources.jar
+            **/build/libs/*.jar
+            !**/build/libs/*-sources.jar
